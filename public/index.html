@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+ 
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+    <title>
+      Fluffy - Create Pet Portrait</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBFhBM3c8HvMVXSt_lYdxP3X7VEng78eLA",
+        authDomain: "fluffy-ade11.firebaseapp.com",
+        databaseURL: "https://fluffy-ade11.firebaseio.com",
+        projectId: "fluffy-ade11",
+        storageBucket: "fluffy-ade11.appspot.com",
+        messagingSenderId: "357016839328",
+        appId: "1:357016839328:web:284835aee8c237f24d15c5",
+        measurementId: "G-0ZNS9KNHNC"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
+
+</html>

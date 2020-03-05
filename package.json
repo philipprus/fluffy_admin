@@ -1,0 +1,85 @@
+{
+  "name": "fluffyart",
+  "version": "0.1.0",
+  "homepage": "/",
+  "engines": {
+    "node": "10.3.0"
+  },
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/free-solid-svg-icons": "^5.10.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "cloudinary": "^1.14.0",
+    "cors": "^2.8.5",
+    "date-fns": "^2.2.1",
+    "express": "^4.17.1",
+    "express-form-data": "^2.0.10",
+    "express-winston": "^3.3.0",
+    "formik": "^1.5.8",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.7.0",
+    "node-mailjet": "^3.3.1",
+    "path": "^0.12.7",
+    "path-to-regexp": "^3.0.0",
+    "prop-types": "^15.7.2",
+    "react": "16.8.0",
+    "react-bootstrap": "^1.0.0-beta.12",
+    "react-datepicker": "^2.9.6",
+    "react-dom": "^16.9.0",
+    "react-grid-gallery": "^0.5.5",
+    "react-images": "^1.0.0",
+    "react-loader-spinner": "^3.1.4",
+    "react-loading": "^2.0.3",
+    "react-paypal-button": "^4.1.1",
+    "react-paypal-button-v2": "^2.6.1",
+    "react-photo-gallery": "^8.0.0",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.1.1",
+    "react-select": "^3.0.4",
+    "react-spinners": "^0.6.1",
+    "react-sticky-box": "^0.8.0",
+    "react-toastify": "^5.5.0",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "rimraf": "^3.0.0",
+    "saga": "^4.0.0-alpha",
+    "uppy": "^1.5.2",
+    "winston": "^3.2.1",
+    "yup": "^0.27.0"
+  },
+  "proxy": "http://localhost:8080",
+  "scripts": {
+    "start": "react-scripts build && node .",
+    "client": "react-scripts start",
+    "server": "react-scripts build && node .",
+    "build": "react-scripts build",
+    "build:dev": "env-cmd .env.dev react-scripts v build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && firebase deploy"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      "ie >= 9",
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "ie 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "ie >= 9",
+      "ie 11"
+    ]
+  }
+}
