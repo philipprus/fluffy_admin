@@ -28,7 +28,7 @@ async function init() {
         res.sendFile(path.join(__dirname, 'build', 'index.html'));
     }); 
   
-    let server = app.listen(process.env.PORT || 8080, () => {
+    let server = app.listen(process.env.PORT || 8080, process.env.CUSTOM_HOST || 0.0.0.0, () => {
         console.log("App listening on port %s", server.address().port);
         console.log("Press Ctrl+C to quit.");  
     });    
