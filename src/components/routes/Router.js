@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Footer from '../Footer';
 import AdminOrder from '../admin/AdminOrder';
 import ScrollToTop from './ScrollToTop';
@@ -22,13 +22,14 @@ export function Routes() {
       </Switch>
       <ScrollToTop />
       <Switch>
+        <Route exact path="/login" component={Auth} />
         <Route
           path="/review"
           render={props => {
             if (isAuthenticated()) {
               return <Reviews {...props} />;
             }
-            return <Auth />;
+            return <Redirect to="login" />;
           }}
         />
         <Route
@@ -37,7 +38,7 @@ export function Routes() {
             if (isAuthenticated()) {
               return <PortfolioGallery {...props} />;
             }
-            return <Auth />;
+            return <Redirect to="login" />;
           }}
         />
         <Route
@@ -46,7 +47,7 @@ export function Routes() {
             if (isAuthenticated()) {
               return <GiftCard {...props} />;
             }
-            return <Auth />;
+            return <Redirect to="login" />;
           }}
         />
         <Route
@@ -55,7 +56,7 @@ export function Routes() {
             if (isAuthenticated()) {
               return <GiftCards {...props} />;
             }
-            return <Auth />;
+            return <Redirect to="login" />;
           }}
         />
         <Route
@@ -64,7 +65,7 @@ export function Routes() {
             if (isAuthenticated()) {
               return <AdminOrder {...props} />;
             }
-            return <Auth />;
+            return <Redirect to="login" />;
           }}
         />
         <Route
@@ -73,7 +74,7 @@ export function Routes() {
             if (isAuthenticated()) {
               return <AdminApp {...props} />;
             }
-            return <Auth />;
+            return <Redirect to="login" />;
           }}
         />
       </Switch>

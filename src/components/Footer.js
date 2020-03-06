@@ -13,20 +13,6 @@ const Footer = () => {
                         <hr/>
                   </div>
                   <div className="col-12 text-center">
-                        <ul className="list-inline">
-                              <li className="list-inline-item">
-                                    <NavLink activeStyle={activeLink} className="nav-link"  to="/check-order-status" >Check Order Status</NavLink>
-                              </li>
-                              <li className="list-inline-item">
-                                    <NavLink activeStyle={activeLink} className="nav-link"  to="/terms-of-service" >Terms Of Service</NavLink>
-                              </li>
-                              <li className="list-inline-item">
-                                    <NavLink activeStyle={activeLink} className="nav-link"  to="/returns-policy" >Returns Policy</NavLink>
-                              </li>
-                              <li className="list-inline-item">
-                                    <NavLink activeStyle={activeLink} className="nav-link" to="/privacy-policy">Privacy Policy</NavLink>
-                              </li>
-                        </ul>
                   </div>
                   <div className="col-12">
                         <div className=" pt-3 pb-2 text-center">

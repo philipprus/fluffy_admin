@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import history from './history';
+import history, { href } from './history';
 
 export const useDataApi = (initialUrl, initialData) => {
       const [data, setData] = useState(initialData);
@@ -57,12 +57,12 @@ export const useDataApi = (initialUrl, initialData) => {
     expires_at: "expires_at",
   };
 
-  const logout = () => {
+ export const logout = () => {
     // Clear access token and ID token from local storage
     localStorage.removeItem(localStorageKeys.access_token);
     localStorage.removeItem(localStorageKeys.expires_at);
     // navigate to the home route
-    history.replace("/");
+   href("/");
 }
 
   export const isAuthenticated = () => {

@@ -5,29 +5,10 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import Loader from 'react-loader-spinner';
 import { localStorageKeys } from '../utils/utils';
+import { href } from '../utils/history';
 
 const Auth = props => {
-  // const [valid, setValid] = React.useState(false);
-
-  // const hadlerValid = status => {
-  //   setValid(status);
-  // };
-
-  // useEffect(() => {
-  //   const getToken = sessionStorage.getItem('auth_token');
-  //   getToken &&
-  //     axios
-  //       .post('/api/login/auth', { token: getToken })
-  //       .then(function(response) {
-  //         if (response.status === 200) {
-  //           setValid(true);
-  //         }
-  //       })
-  //       .catch(({ response }) => {
-  //         sessionStorage.removeItem('auth_token');
-  //       });
-  // }, [valid]);
-
+  
   return (
     <div className="container-fluid text-center pt-5 pb-5">
       <div className="row  justify-content-center">
@@ -99,13 +80,14 @@ const LoginFormFormik = withFormik({
       .then(function(response) {
         if (response.status === 200) {
           const { auth, token } = response && response.data;
-          const expiresAt = JSON.stringify(1000000 + new Date().getTime());
-
-          localStorage.setItem(localStorageKeys.access_token, token);
-          localStorage.setItem(localStorageKeys.expires_at, expiresAt);
-
-          bag.setSubmitting(false);
-          bag.props.hadlerValid(auth);
+          if(auth) {
+            const expiresAt = JSON.stringify(1000000 + new Date().getTime());
+            localStorage.setItem(localStorageKeys.access_token, token);
+            localStorage.setItem(localStorageKeys.expires_at, expiresAt);
+            bag.setSubmitting(false);
+            href("/");
+          }
+          // bag.props.hadlerValid(auth);
         }
       })
       .catch(({ response }) => {
