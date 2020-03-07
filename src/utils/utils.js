@@ -22,7 +22,7 @@ export const useDataApi = (initialUrl, initialData) => {
         };
         fetchData();
       }, [url, fetch]);
-      return [{ data, isLoading, isError }, setUrl, fetch, setFetch];
+      return [{ data, isLoading, isError, setUrl, fetch, setFetch}];
     };
     
 

@@ -8,7 +8,7 @@ import EditPortfolio from './EditPortfolio';
 
 const url = '/api/portfolio/';
 const PortfolioGallery = props => {
-  const [{ data, isLoading, isError }, fetch, setFetch] = useDataApi(url, []);
+  const [{ data, isLoading, isError, fetch, setFetch}] = useDataApi(url, []);
   const [openModal, setOpenModal] = React.useState(false);
   const createGallery = data => {
     const res = [];
