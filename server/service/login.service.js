@@ -11,7 +11,7 @@ const authenticate = async ({login, password}) => {
 
 const checkPass = (login, password) => {
     
-      if ( (login === (process.env.LOGIN_ADMIN || "login12345")) && (password === (process.env.PASSWORD_ADMIN || "password12345")) ) return true;
+      if ( (login === (process.env.REACT_APP_LOGIN_ADMIN || "login12345")) && (password === (process.env.REACT_APP_PASSWORD_ADMIN || "password12345")) ) return true;
       
       return false;
     };      

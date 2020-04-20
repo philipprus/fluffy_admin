@@ -8,7 +8,7 @@ import EditPortfolio from './EditPortfolio';
 
 const url = '/api/portfolio/';
 const PortfolioGallery = props => {
-  const [{ data, isLoading, isError, fetch, setFetch}] = useDataApi(url, []);
+  const [{ data, isLoading, isError, fetch, setFetch }] = useDataApi(url, []);
   const [openModal, setOpenModal] = React.useState(false);
   const createGallery = data => {
     const res = [];
@@ -17,18 +17,18 @@ const PortfolioGallery = props => {
         const { image, _id, size, style } = img;
         if (image.length) {
           const { src, thumbnail, thumbnailHeight, thumbnailWidth } = image[0];
-            res.push({
-              src,
-              thumbnail,
-              //     caption: img.description,
-              thumbnailWidth,
-              thumbnailHeight,
-              _id,
-              tags: [
-                { value: size, title: size },
-                { value: style, title: style },
-              ],
-            });
+          res.push({
+            src,
+            thumbnail,
+            //     caption: img.description,
+            thumbnailWidth,
+            thumbnailHeight,
+            _id,
+            tags: [
+              { value: size, title: size },
+              { value: style, title: style },
+            ],
+          });
         }
         return;
       });
@@ -78,7 +78,6 @@ const PortfolioGallery = props => {
   };
 
   if (isError) return <div>Something went wrong ...</div>;
-  //   if (isLoading) return <div>Loading ...</div>;
 
   return (
     <>
@@ -89,38 +88,40 @@ const PortfolioGallery = props => {
             open={openModal}
             image={data[currentImage]}
             handleClose={setOpenModal}
-            callback={() => setFetch(fetch + 1)} 
+            callback={() => setFetch(fetch + 1)}
             handlerDelete={deleteImage}
           />
         </div>
       </div>
       {isLoading && <div>Loading...</div>}
-      {!images.length ? <div> Empty </div> : 
-
-      <div
-        style={{
-          display: 'block',
-          minHeight: '1px',
-          width: '100%',
-          overflow: 'auto',
-        }}
-        className="col"
-      >
-        <Gallery
-          images={createGallery(images)}
-          enableLightbox={false}
-          rowHeight={350}
-          onSelectImage={onSelectImage}
-          onClickThumbnail={onCurrentImageChange}
-          currentImageWillChange={onCurrentImageChange}
-          enableImageSelection={false}
-          customControls={[
-            <button key="deleteImage" onClick={deleteImage}>
-              Delete Image
-            </button>,
-          ]}
-        />
-      </div> }
+      {!images.length ? (
+        <div> Empty </div>
+      ) : (
+        <div
+          style={{
+            display: 'block',
+            minHeight: '1px',
+            width: '100%',
+            overflow: 'auto',
+          }}
+          className="col"
+        >
+          <Gallery
+            images={createGallery(images)}
+            enableLightbox={false}
+            rowHeight={350}
+            onSelectImage={onSelectImage}
+            onClickThumbnail={onCurrentImageChange}
+            currentImageWillChange={onCurrentImageChange}
+            enableImageSelection={false}
+            customControls={[
+              <button key="deleteImage" onClick={deleteImage}>
+                Delete Image
+              </button>,
+            ]}
+          />
+        </div>
+      )}
 
       <ToastContainer autoClose={4000} />
     </>
