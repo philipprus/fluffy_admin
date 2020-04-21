@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 const authenticate = async ({login, password}) => {
       try {
             if(checkPass(login, password)) return true;
@@ -10,7 +10,7 @@ const authenticate = async ({login, password}) => {
 }
 
 const checkPass = (login, password) => {
-    
+    console.log(process.env);
       if ( (login === (process.env.REACT_APP_LOGIN_ADMIN || "login12345")) && (password === (process.env.REACT_APP_PASSWORD_ADMIN || "password12345")) ) return true;
       
       return false;
