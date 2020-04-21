@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv').config();
+console.log(process.env.NODE_ENV);
 const {get, KnownConfigKey } = require('../utils/config');
 
 const { MongoConnection } = require('../utils/mongo-connection');
