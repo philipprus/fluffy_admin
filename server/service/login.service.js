@@ -10,8 +10,8 @@ const authenticate = async ({login, password}) => {
 }
 
 const checkPass = (login, password) => {
-    console.log(dotenv);
-      if ( (login === (process.env.REACT_APP_LOGIN_ADMIN || "login12345")) && (password === (process.env.REACT_APP_PASSWORD_ADMIN || "password12345")) ) return true;
+    console.log(dotenv.parsed.REACT_APP_LOGIN_ADMIN   );
+      if ( (login === (dotenv.parsed.REACT_APP_LOGIN_ADMIN || "login12345")) && (password === (dotenv.parsed.REACT_APP_PASSWORD_ADMIN || "password12345")) ) return true;
       
       return false;
     };      
